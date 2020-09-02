@@ -35,6 +35,8 @@ void cir(int x0, int y0, int r)
 	        { 
                 m += 1;
 	            p += 2*m + 1;
+                printf("\n%d",m+x0);
+                printf("\n%d",n+x0);
 	            putpixel(m+x0,n+y0,WHITE);
 	            putpixel(-m+x0,-n+y0,RED);
 	            putpixel(-m+x0,n+y0,CYAN);
@@ -49,6 +51,8 @@ void cir(int x0, int y0, int r)
                 m += 1;
 	            n -= 1;
 	            p += 2*m + 1 -2*n;
+                printf("\n%d",m+x0);
+                printf("\n%d",n+x0);
 	            putpixel(m+x0,n+y0,WHITE);
 	            putpixel(-m+x0,-n+y0,RED);
 	            putpixel(-m+x0,n+y0,CYAN);

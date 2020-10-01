@@ -30,6 +30,7 @@ void cohsuth(int xwmin, int ywmin,int xwmax, int ywmax,int x1,int y1,int x2,int 
         }
         else if((outcode1 & outcode2)!=0) //Bitwise operator
         {
+            printf("The line is completely outside the clipping border");
             break;
         }
         else
@@ -90,7 +91,6 @@ void liabar(int xwmin, int ywmin,int xwmax, int ywmax,int x1,int y1,int x2,int y
     int dx=x2-x1;
     int dy=y2-y1;
     int x1n,y1n,x2n,y2n;
-    printf("dx:%d  dy:%d\n",dx,dy);
     float t1=0,t2=1;
     p[0]=-dx;
     p[1]=dx;
@@ -115,9 +115,15 @@ void liabar(int xwmin, int ywmin,int xwmax, int ywmax,int x1,int y1,int x2,int y
         if(p[d]==0)
         {
             if(q[d]<0)
-                printf("The line is outside and parallel to %d",i);
+            {   
+                printf("The line is outside and parallel to boundary");
+                break;
+            }
             else
-                printf("Line is inside and parallel to %d",i); 
+            {
+                printf("Line is inside and parallel to boundary"); 
+                break;
+            }
         }
         else if(p[d]<0)
         {
@@ -159,8 +165,11 @@ void liabar(int xwmin, int ywmin,int xwmax, int ywmax,int x1,int y1,int x2,int y
     }
     printf("\nt2: %f x2: %d y2: %d",t2,x2n,y2n);
     line(x1,y1,x2,y2);
-    setcolor(RED);
-    line(x1n,y1n,x2n,y2n);
+    if((x1n!=x1) && (y1n != y1) && (x2n != x2) && (y2n != y2))
+    {
+        setcolor(RED);
+        line(x1n,y1n,x2n,y2n);
+    }
 }
 int main()
 {

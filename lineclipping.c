@@ -18,7 +18,6 @@ void cohsuth(int xwmin, int ywmin,int xwmax, int ywmax,int x1,int y1,int x2,int 
     int outcode1=getcode(x1,y1,xwmax,ywmax,xwmin,ywmin),outcode2=getcode(x2,y2,xwmax,ywmax,xwmin,ywmin);//Gives the region code for input lines.
     int x,y,temp;
     printf("%d %d",outcode1,outcode2);
-    line(x1,y1,x2,y2);
     int accept=0; //A check condtion.
     while(1)
     {
@@ -164,13 +163,13 @@ void liabar(int xwmin, int ywmin,int xwmax, int ywmax,int x1,int y1,int x2,int y
         y2n=y2;
     }
     printf("\nt2: %f x2: %d y2: %d",t2,x2n,y2n);
-    line(x1,y1,x2,y2);
     if((x1n!=x1) && (y1n != y1) && (x2n != x2) && (y2n != y2))
     {
         setcolor(RED);
         line(x1n,y1n,x2n,y2n);
     }
 }
+
 int main()
 {
     int xwmin,ywmin,xwmax,ywmax;
@@ -182,6 +181,7 @@ int main()
     rectangle(xwmin,ywmin,xwmax,ywmax);
     printf("Enter the line coordinates: ");
     scanf("%d %d %d %d",&x1,&y1,&x2,&y2);
+    /*line(x1,y1,x2,y2);*/
     printf("\n1.Cohen-Sutherland clipping algorithm");
     printf("\n2.Liang-Barsky clipping algorithm");
     printf("\n3.Exit");

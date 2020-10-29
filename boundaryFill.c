@@ -67,7 +67,7 @@ void floodFill8(int x, int y, int fillColor, int oldColor)
     }
 }
 
-int main()
+/*int main()
 {
     int gd = DETECT,gm;
     initgraph(&gd,&gm,"");
@@ -89,4 +89,4 @@ int main()
     closegraph();
     return 0;
 }
-
+*/

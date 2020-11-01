@@ -27,6 +27,7 @@ int main()
     for(i = 0;i<4;i++)
     {
         putpixel(x[i],y[i],WHITE);
+        circle(x[i],y[i],3);
     }
     bezierCurve(x,y);
     getevent();

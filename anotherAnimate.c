@@ -1,17 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<graphics.h>
-#include "boundaryFill.c"
+//#include "boundaryFill.c"
 
 void animate(int x0,int y0,int r,int n)
 { 
     int i;
     for(i=0;i<n;i++)
     {   
-        x0++;
         y0++;
         circle(x0,y0,r);
-        delay(50);
+        floodfill(x0,y0,YELLOW); 
+        delay(30);
+        cleardevice();
     }
     printf("\nThe circle has been animated to a cylinder.");
 }

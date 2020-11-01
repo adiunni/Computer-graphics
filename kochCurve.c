@@ -36,6 +36,7 @@ int main(void)
     int x1 = 100, y1 = 100, x2 = 500, y2 = 500;
     getch();
     koch(x1, y1, x2, y2, 4);
+    printf("\nThe koch curve is printed");
     closegraph();
     return 0;
 }
